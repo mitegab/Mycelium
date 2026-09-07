@@ -1,0 +1,13 @@
+# Rust build output
+/target
+
+# Offline vendored dependency cache (regenerate with tools/vendor_all.sh)
+/vendor
+/.cargo
+
+# Local node state / identities
+/.mycelium
+*.identity.key
+
+# Scratch
+*.log
