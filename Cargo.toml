@@ -1,0 +1,32 @@
+[package]
+name = "mycelium"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "Resilient, authenticated, off-grid mesh networking engine (MVP)"
+license = "MIT OR Apache-2.0"
+authors = ["Mycelium contributors"]
+readme = "README.md"
+
+[lib]
+name = "mycelium"
+path = "src/lib.rs"
+
+[[bin]]
+name = "mycelium"
+path = "src/bin/mycelium.rs"
+
+[[bin]]
+name = "sim"
+path = "src/bin/sim.rs"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+postcard = { version = "1.0.10", default-features = false, features = ["use-std"] }
+
+[profile.release]
+lto = "thin"
+opt-level = 2
+
+[profile.dev]
+opt-level = 0
